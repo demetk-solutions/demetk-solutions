@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Policies | Demet Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050505; /* Ana sayfa arka planı */
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        h1, .tech-font { font-family: 'Space Grotesk', sans-serif; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Beyaz Tema Scroll Alanı */
+        .policy-viewer {
+            background-color: #ffffff; /* Beyaz Arka Plan */
+            color: #1a1a1a; /* Koyu Gri Yazı */
+            border-radius: 24px;
+            padding: 40px;
+            height: 600px; /* Sabit yükseklik */
+            overflow-y: scroll; /* Kaydırma özelliği */
+            line-height: 1.8;
+            white-space: pre-wrap; /* TXT'deki satır başlarını ve boşlukları korur */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* Scrollbar Tasarımı (Beyaz alan için) */
+        .policy-viewer::-webkit-scrollbar { width: 10px; }
+        .policy-viewer::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 0 24px 24px 0; }
+        .policy-viewer::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; border: 3px solid #f1f1f1; }
+        .policy-viewer::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center glass-card mt-4 mx-auto max-w-6xl left-0 right-0 rounded-full">
+        <div class="text-xl font-bold tracking-tighter">DEMET <span class="text-blue-500 text-sm">Solutions</span></div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-gray-400">
+            <a href="index.html" class="hover:text-white transition">Profile</a>
+            <a href="process.html" class="hover:text-white transition">Process</a>
+            <a href="services.html" class="hover:text-white transition">Services</a>
+            <a href="projects.html" class="hover:text-white transition">Projects</a>
+            <a href="termsandpolicies.html" class="text-white">Terms & Policies</a>
+            <a href="references.html" class="hover:text-white transition">References</a>
+            <a href="contact.html" class="hover:text-white transition">Contact</a>
+        </div>
+        <a href="contact.html" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm transition">Hire Me</a>
+    </nav>
+
+    <section class="min-h-screen flex flex-col pt-32 pb-20 px-6 max-w-5xl mx-auto">
+        <div data-aos="fade-up" class="mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Terms & <span class="gradient-text">Policies</span></h1>
+            <p class="text-gray-400">Please read our service guidelines and legal framework.</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="200" class="policy-viewer" id="content-area">
+            Loading policies...
+        </div>
+
+        <div class="mt-8 text-center">
+            <a href="contact.html" class="text-blue-400 hover:text-blue-300 text-sm font-semibold underline underline-offset-4">
+                Have questions about these terms? Contact support.
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-600 text-xs tracking-widest uppercase">
+        © 2025 Demet Solutions. Built for the U.S. Market.
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // TXT Dosyasını Okuyan JavaScript Fonksiyonu
+        async function loadTerms() {
+            try {
+                const response = await fetch('termsandpolicies.txt');
+                if (!response.ok) throw new Error('File not found');
+                const text = await response.text();
+                document.getElementById('content-area').innerText = text;
+            } catch (error) {
+                document.getElementById('content-area').innerHTML = 
+                    "<span style='color:red;'>Error: Could not load termsandpolicies.txt. Please ensure the file exists.</span>";
+            }
+        }
+
+        // Sayfa yüklendiğinde fonksiyonu çalıştır
+        window.onload = loadTerms;
+    </script>
+</body>
+</html>
