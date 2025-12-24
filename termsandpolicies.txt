@@ -1,0 +1,43 @@
+1. Master Service Agreement (MSA) & Terms of Service
+
+TERMS OF SERVICE Last Updated: [24.12.2025] Provider: Demet Solutions (Represented by Demet Kurt)
+
+1. SCOPE OF SERVICES Demet Solutions provides bespoke automation architecture utilizing n8n workflows and custom-built HTML interfaces ("The Dashboard").
+The service includes system design, integration of third-party APIs, and deployment documentation. This is a consultancy and implementation service;
+it is not a pre-packaged software product.
+
+2. DEPLOYMENT & HOSTING All automations are designed to be hosted by the Client (via VPS or n8n cloud subscription).
+The HTML interface functions client-side and interacts with the Client’s infrastructure via secure webhooks.
+Demet Solutions does not provide permanent hosting for the Client's data or workflows.
+
+3. DATA PRIVACY & ACCESS CONTROL
+
+Verification: Access to direct communication (Tawk.to) is gated by a unique Access Token generated upon acceptance of these terms.
+This token is used solely for identity verification during the onboarding process.
+
+Ephemeral Data: Any API keys or credentials provided for setup are stored in a secure, local environment during
+the configuration phase and arepermanently deleted upon project delivery.
+
+Third-Party Disclosure: Data processed through the automations may be transmitted to third-party AI models (e.g., OpenAI, Anthropic)
+as per the project requirements. The Client acknowledges the privacy terms of these providers.
+
+4. LIMITATION OF LIABILITY Demet Solutions shall not be held liable for any direct, indirect, or consequential damages,
+including but not limited to financial loss, data loss, or account suspensions on third-party platforms (e.g., Instagram, Telegram)
+resulting from the use of the automations. The Client assumes full responsibility for the operation of the delivered workflows.
+
+5. PAYMENTS All transactions are secured via Escrow services to ensure bilateral protection. Fees for maintenance and custom updates are subject to separate agreements.
+
+
+2. Privacy Policy & Data Handling
+
+PRIVACY & DATA POLICY
+
+1. DATA SOVEREIGNTY Demet Solutions operates on a "Zero-Retention" principle. Once the handover is complete, no Client data, API keys,
+or proprietary workflows remain on the Provider’s systems.
+
+2. THE "ACCESS TOKEN" SYSTEM To initiate high-priority support and chat, a unique alphanumeric token is generated.
+This system allows Demet Solutions to verify the Client’s identity without collecting invasive metadata such as
+IP addresses or device fingerprints, ensuring a privacy-first communication channel.
+
+3. TECHNICAL SAFEGUARDS During the development phase, data integrity is monitored via internal analysis tools to ensure no unauthorized
+copying or manipulation occurs. Upon delivery, the Client is encouraged to rotate all API credentials for maximum security
